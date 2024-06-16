@@ -1,3 +1,5 @@
+import LoginForm from "../../components/App/LoginForm/LoginForm";
+
 const LoginPage = (): React.ReactElement => {
   return (
     <section className="flex flex-col bg-stone-100 w-full h-screen mt-0">
@@ -13,6 +15,7 @@ const LoginPage = (): React.ReactElement => {
         <h1 className="text-2x1 weight font-semibold">
           Log in to your account
         </h1>
+        <LoginForm />
       </div>
     </section>
   );
