@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 
-const apiURL = import.meta.env.VOTE_API_URL;
+const apiURL = import.meta.env.VITE_API_URL;
 
 const handlers = [
   http.post(`${apiURL}/auth/login`, () =>

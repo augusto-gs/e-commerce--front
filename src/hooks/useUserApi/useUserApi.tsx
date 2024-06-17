@@ -4,7 +4,7 @@ import { UserCredentialsStructure } from "../../types";
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 const useUserApi = () => {
-  const getToken = async (
+  const getUserLogin = async (
     userCredentials: UserCredentialsStructure,
   ): Promise<string | undefined> => {
     try {
@@ -21,7 +21,7 @@ const useUserApi = () => {
     }
   };
 
-  return { getToken };
+  return { getUserLogin };
 };
 
 export default useUserApi;
