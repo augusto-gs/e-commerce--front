@@ -1,4 +1,4 @@
-import LoginForm from "../../components/App/LoginForm/LoginForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
 
 const LoginPage = (): React.ReactElement => {
   return (
@@ -11,11 +11,11 @@ const LoginPage = (): React.ReactElement => {
           height="32px"
         />
       </div>
-      <div className="self-center m-10 bg-white p-2 border-solid border-gray-200 border-2 rounded-md h-96 w-2/3 flex justify-left max-w-575px">
+      <div className="flex-col self-center m-10 bg-white p-2 border-solid border-gray-200 border-2 rounded-md h-96 w-2/3 flex justify-left max-w-575px">
         <h1 className="text-2x1 weight font-semibold">
           Log in to your account
         </h1>
-        <LoginForm />
+        <LoginForm actionOnClick={() => {}} />
       </div>
     </section>
   );

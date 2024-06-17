@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { UserCredentialsStructure } from "../../../types";
+import { UserCredentialsStructure } from "../../types";
+import LoginInput from "../LoginInput/LoginInput";
+import LoginLabel from "../LoginLabel/LoginLabel";
 
 interface LoginFormProps {
   actionOnClick: (userCredentials: UserCredentialsStructure) => void;
@@ -34,18 +36,20 @@ const LoginForm = ({ actionOnClick }: LoginFormProps): React.ReactElement => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleLoginSubmit}>
-      <label>
-        {" "}
+    <form
+      className="flex flex-col"
+      autoComplete="off"
+      onSubmit={handleLoginSubmit}
+    >
+      <LoginLabel htmlFor="username">
         Username
-        <input type="text" id="username" onChange={onChangeUserData} />
-      </label>
-      <label>
-        {" "}
+        <LoginInput id="username" onChange={onChangeUserData} />
+      </LoginLabel>
+      <LoginLabel htmlFor="password">
         Password
-        <input type="text" id="password" onChange={onChangeUserData} />
-      </label>
-      <button type="submit" disabled={isDisabled}>
+        <LoginInput onChange={onChangeUserData} id="password" />
+      </LoginLabel>
+      <button type="submit" disabled={!isDisabled}>
         Log in
       </button>
     </form>
