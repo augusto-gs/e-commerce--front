@@ -1,6 +1,18 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
+import useUserApi from "../../hooks/useUserApi/useUserApi";
+import { UserCredentialsStructure } from "../../types";
 
 const LoginPage = (): React.ReactElement => {
+  const { getUserLogin } = useUserApi();
+
+  const handleUserLogin = async (userCredentials: UserCredentialsStructure) => {
+    const token = await getUserLogin(userCredentials);
+
+    if (token) {
+      console.log("You have logged in");
+    }
+  };
+
   return (
     <section className="flex flex-col bg-stone-100 w-full h-screen mt-0">
       <div className="flex justify-center content-center items-center bg-white mt-0 h-11">
@@ -15,7 +27,7 @@ const LoginPage = (): React.ReactElement => {
         <h1 className="text-2xl weight font-semibold sm:text-32px">
           Log in to your account
         </h1>
-        <LoginForm actionOnClick={() => {}} />
+        <LoginForm actionOnClick={handleUserLogin} />
       </div>
     </section>
   );
