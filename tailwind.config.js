@@ -4,13 +4,25 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        "2x1": "32px",
+        "32px": "32px",
       },
       borderWidth: {
         2: "1.5px",
       },
       maxWidth: {
         "575px": "575px",
+      },
+      colors: {
+        "neutral-100": "#666",
+      },
+      height: {
+        "45px": "45px",
+      },
+      width: {
+        "200px": "200px",
+      },
+      borderRadius: {
+        "md-12px": "12px",
       },
     },
   },

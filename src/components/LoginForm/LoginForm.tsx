@@ -37,19 +37,23 @@ const LoginForm = ({ actionOnClick }: LoginFormProps): React.ReactElement => {
 
   return (
     <form
-      className="flex flex-col"
+      className="flex flex-col mt-5"
       autoComplete="off"
       onSubmit={handleLoginSubmit}
     >
       <LoginLabel htmlFor="username">
         Username
-        <LoginInput id="username" onChange={onChangeUserData} />
+        <LoginInput id="username" onChange={onChangeUserData} type="text" />
       </LoginLabel>
       <LoginLabel htmlFor="password">
         Password
-        <LoginInput onChange={onChangeUserData} id="password" />
+        <LoginInput onChange={onChangeUserData} id="password" type="password" />
       </LoginLabel>
-      <button type="submit" disabled={!isDisabled}>
+      <button
+        className="bg-gray-300 border-none text-white rounded-3xl h-45px w-200px self-center"
+        type="submit"
+        disabled={!isDisabled}
+      >
         Log in
       </button>
     </form>
